@@ -1,0 +1,93 @@
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-osx-appearance: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    color: currentColor;
+    background-color: transparent;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.btn {
+    @include aa;
+    width: 100%;
+    height: 2.75em;
+    margin: 0 auto;
+    margin-top: .875em;
+    opacity: .8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-family: $opensans;
+    font-weight: 700;
+    text-decoration: none;
+    color: $white;
+    background: $blue;
+
+    &.-disabled {
+        background: $grey;
+    }
+
+    span {
+        margin: auto;
+        display: block;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+}
+
+.btn--soft {
+    background: $lilac;
+}
+
+.btn--clear {
+    border: 2px solid $blue;
+    color: $blue;
+    background: $white;
+}
+
+.btn--large {
+    height: 2.25em;
+    font-family: $scenic;
+    font-size: 1.25em;
+}
+
+.btn--split {
+    width: fit-content;
+    padding: .125em 1em .125em 2.25em;
+    margin: 0 auto 1em;
+    font-size: 0.875em;
+}
+
+.list-icon {
+    margin-right: 1em;
+    display: flex;
+}
+
+.delete-item {
+    margin-right: 1em;
+    display: flex;
+    position: relative;
+
+    &:after {
+        content: '';
+        width: 8rem;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.nav-toggle {
+    outline: none;
+}

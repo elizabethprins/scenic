@@ -1,0 +1,9 @@
+{
+    "checks" : {
+        "ImportAll": false,
+        "UnusedVariable": false,
+        "UnusedPatternVariable": false,
+        "UnusedTopLevel": false
+    },
+    "excludedPaths" : []
+}

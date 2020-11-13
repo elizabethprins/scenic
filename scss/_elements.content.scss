@@ -1,0 +1,274 @@
+.main {
+    width: 100vw;
+    height: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba($greyLighter, 0.3), rgba($white, 0.1));
+    overflow: hidden;
+
+    @include breakpoint($small) {
+        width: #{$width};
+        height: #{$height};
+        max-height: none;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        margin-left: calc(50% - (#{$width} / 2));
+        position: absolute;
+        border: 1rem solid $blueBlack;
+        border-radius: 3.25rem;
+        box-shadow: rgba($blueBlack, 0.4) 0px 30px 90px;
+        background-image: linear-gradient(to bottom, $whiteDark, $white);
+    }
+}
+
+.main__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    overflow-x: hidden;
+    pointer-events: none;
+
+    &.is-open {
+        pointer-events: all;
+    }
+
+    > div:not(.splash) {
+        padding-top: 5.5rem;
+    }
+}
+
+.nav {
+    width: 100vw;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: $white;
+    z-index: 2;
+
+    h2 {
+        margin: .3125em auto;
+        font-size: 2em;
+        font-weight: 700;
+        letter-spacing: .25px;
+        z-index: -1;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    button {
+        margin-right: 1em;
+        display: flex;
+        position: absolute;
+        left: 1em;
+    }
+
+    @include breakpoint($small) {
+        max-width: calc(#{$width} - 2rem);
+        position: absolute;
+    }
+}
+
+.nav__menu {
+    width: 75%;
+    max-width: 20rem;
+    height: 100vh;
+    padding-top: 3.75rem;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $white;
+    overflow: auto;
+    z-index: -1;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            margin: .125em 0 0;
+        }
+
+        p {
+            margin: 0;
+            font-size: .9375em;
+            color: $grey;
+        }
+    }
+
+    .is-open & {
+        box-shadow: -25px 0 60px $greyDark;
+    }
+
+    @include breakpoint($small) {
+        height: $height;
+    }
+}
+
+.nav__menu__list {
+    margin: 3em 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    li {
+        a {
+            padding: .875em 1em;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: $blueBlack;
+
+            svg {
+                margin-right: 1em;
+
+                &:last-child {
+                    margin-right: 0;
+                    margin-left: auto;
+                }
+            }
+        }
+
+        &.is-active {
+            a {
+                background: $greyLighter;
+            }
+        }
+    }
+}
+
+.settings-list {
+    li a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: .9375em;
+        text-decoration: none;
+        color: $black;
+
+        svg {
+            margin-right: 1em;
+
+            &:last-child {
+                margin-right: 0;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.toast {
+    width: 100%;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: 2px solid $blue;
+    border-radius: 5px;
+    text-align: center;
+    background: $white;
+    z-index: 100;
+
+    p {
+        font-size: 1.125em;
+        font-weight: 600;
+        color: $blue;
+    }
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+
+    .category {
+        padding: 1rem 1rem .5rem;
+    }
+}
+
+.category {
+    margin-bottom: 1rem;
+    flex: 1;
+    flex-basis: 40%;
+    flex-direction: column;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    font-size: .9375em;
+    text-align: center;
+    background: $white;
+
+    a {
+        width: 100%;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &:nth-of-type(2n) {
+        margin-left: 1rem;
+    }
+
+    + .category {
+        border-top: 0;
+    }
+
+    &:before {
+        content: '';
+        width: 6rem;
+        height: 5rem;
+        margin-bottom: .5rem;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &.cat-transport:before {
+        background-image: url('/assets/van.png');
+    }
+
+    &.cat-sleeping:before {
+        background-image: url('/assets/beds.png');
+        background-size: 70%;
+    }
+
+    &.cat-food-drink:before {
+        background-image: url('/assets/beer.png');
+        background-size: 70%;
+    }
+
+    &.cat-studio-rent:before {
+        background-image: url('/assets/studio.png');
+        background-size: 70%;
+    }
+
+    &.cat-gear:before {
+        background-image: url('/assets/guitar.png');
+    }
+
+    &.cat-other:before {
+        // background-position: 50% 100%;
+        // background-size: 65%;
+        background-image: url('/assets/band.png');
+    }
+}

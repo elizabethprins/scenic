@@ -1,0 +1,222 @@
+.overview {
+    @include main-wrap;
+    max-width: 24rem;
+    padding-top: 3em;
+    padding-bottom: 5em;
+    margin: 0 auto;
+
+    h1, h2 {
+        margin: 0 auto .25em;
+        text-align: center;
+        color: $greyDark;
+    }
+
+    &.history-detail {
+        h1 {
+            margin: .375em auto .5em;
+            font-size: 1.5em;
+        }
+    }
+}
+
+.overview__welcome,
+.overview__total,
+.overview__charge,
+.overview__expenses,
+.overview__bandmates,
+.overview__payment,
+.overview__settings {
+    padding: 1rem;
+    border-radius: 5px;
+    color: $black;
+    background: $greyLighter;
+    background-image: radial-gradient(circle at 75% 90%, $whiteDark 0%, $blueGreyLighter 20%, $blueGreyLight 95%);
+
+    + div {
+        margin-top: 1em;
+    }
+
+    h2 {
+        margin: .375em auto .75em;
+    }
+
+    li {
+        padding: .5em 0;
+        display: flex;
+        align-items: center;
+
+        + li {
+            border-top: 1px solid rgba($white, .9);
+        }
+
+        span:nth-of-type(2) {
+            margin-left: auto;
+        }
+    }
+}
+
+.overview__welcome {
+    text-align: center;
+}
+
+.overview__payment li a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: currentColor;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.overview__total {
+    p:first-of-type {
+        margin: 0 auto;
+        font-family: $scenic;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        color: $greyDark;
+    }
+
+    p:last-of-type {
+        margin: 1em 0 0;
+        display: flex;
+
+        span {
+            margin-left: auto;
+        }
+    }
+}
+
+.split-check {
+    width: fit-content;
+    padding: .125em 1em .125em 2.25em;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+    position: relative;
+    border-radius: 5px;
+    font-size: 0.9375em;
+    font-weight: 600;
+    text-align: center;
+    color: $greyDark;
+    background: $white;
+
+    &:before {
+        content: '';
+        width: .375em;
+        height: .8125em;
+        flex-shrink: 0;
+        position: absolute;
+        top: .375em;
+        left: 1em;
+        border-bottom: 2px solid $greyDark;
+        border-right: 2px solid $greyDark;
+        transform: rotate(35deg);
+    }
+
+    &.invalid-split {
+        padding: .125em 1em;
+        margin-bottom: .5em;
+        color: darken($red, 5%);
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.overview__bandmates {
+    position: relative;
+
+    .split-label {
+        font-size: .875em;
+        white-space: nowrap;
+    }
+
+    .bandmate-split {
+        max-width: 4em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .bandmate-divider {
+        margin: 0 .125em;
+        font-weight: 600;
+        color: $white;
+    }
+
+    input {
+        width: 3.5em;
+        height: 2em;
+        margin: 0 .5em;
+        border-radius: 5px;
+
+        @include breakpoint($small) {
+            width: 4em;
+            padding-right: 0;
+        }
+    }
+}
+
+.overview__expenses {
+    position: relative;
+
+    h3 {
+        margin-top: -.75em;
+        text-align: center;
+    }
+
+    li a {
+        text-decoration: none;
+        color: currentColor;
+    }
+}
+
+.overview__charge {
+    text-align: center;
+
+    p {
+        font-weight: 600;
+        color: $blue;
+    }
+
+    h2,
+    .overview__charge__amount {
+        font-family: $scenic;
+        font-size: 2em;
+        color: $black;
+    }
+
+    .overview__charge__amount {
+        margin-bottom: .25em;
+    }
+
+    .overview__charge__next {
+        font-size: 1.25em;
+    }
+
+    .btn:first-of-type {
+        margin-top: 2.5em;
+    }
+
+    .bandmate-personal-calc {
+        span:nth-of-type(2) {
+            font-size: .75em;
+        }
+
+        span:nth-of-type(3) {
+            margin-left: .5em;
+            font-weight: 600;
+        }
+    }
+}
+
+.overview__settings {
+    h3 {
+        margin-bottom: .25em;
+    }
+}

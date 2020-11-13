@@ -1,0 +1,53 @@
+// Colors
+
+$white: #FFFFFF;
+$black: #0B0C10;
+$whiteDark: #fafafa;
+$greyLightest: #f5f5f5;
+$greyLighter: #F1F1F1;
+$greyLight: #DFDFDF;
+$grey: #A4A3AB;
+$greyDark: #1F2833;
+$red: #FE615A;
+
+
+//new
+
+$blueBlack: #1D1D35;
+$blue: #3333FF;
+$blueLight: #6666FF;
+$lilac: #8566FF;
+$lilacLight: #C89CFF;
+$pink: #FFD4FF;
+$pinkLight: #FFF0FF;
+$blueGrey: #DBDAE2;
+$blueGreyLight: #E7E7EF;
+$blueGreyLighter: #F8F6FF;
+
+
+// Fonts
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+
+$opensans: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+$scenic: 'Josefin Sans', $opensans;
+
+
+// Breakpoints
+
+$superTiny: 350px;
+$tiny: 480px;
+$small: 768px;
+$medium: 1024px;
+$large: 1280px;
+$huge: 1660px;
+
+
+// Miscellaneous
+
+$maxWidth: 75rem;
+$pageWidth: 55rem;
+$width: 410px;
+$height: 820px;

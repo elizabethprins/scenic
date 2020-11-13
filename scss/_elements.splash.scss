@@ -1,0 +1,120 @@
+.splash {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.splash__logo {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    svg, h1 {
+        opacity: .9;
+        mix-blend-mode: hard-light;
+    }
+
+    svg {
+        width: 75%;
+        max-width: 10rem;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    h1 {
+        margin: 1.25rem 0 0;
+        font-size: 5.5rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    h2 {
+        margin-top: .25rem;
+    }
+}
+
+.splash__inner {
+    width: 100%;
+    min-height: 5rem;
+    padding-bottom: 3rem;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    > p {
+        width: 80%;
+        max-width: 20rem;
+        font-family: $scenic;
+        font-size: 1.125em;
+        font-weight: 600;
+        line-height: 1.4;
+        text-align: center;
+    }
+}
+
+.splash__buttons {
+    width: 80%;
+    max-width: 20rem;
+    margin-top: 5rem;
+
+    &.enter-code {
+        margin-top: .5rem;
+    }
+
+    a {
+        margin: 0 0 .75rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        margin: 1.75em 0 .5em;
+        font-family: $scenic;
+        font-size: 1.125em;
+        text-align: center;
+    }
+
+    svg {
+        width: 6rem;
+        height: auto;
+        margin: 1rem auto 2rem;
+        display: block;
+
+        path {
+            fill: $blue;
+        }
+    }
+
+    &.spaced {
+        a {
+            margin: 0 0 1.25rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.splash__enter-code {
+    margin-bottom: 2rem;
+    display: flex;
+
+    input[type="number"] {
+        height: 2rem;
+        border: 3px solid $blue;
+        border-radius: 5px;
+        background: none;
+
+        + input[type="number"] {
+            margin-left: .5rem;
+        }
+    }
+}

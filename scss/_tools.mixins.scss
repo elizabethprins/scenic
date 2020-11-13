@@ -1,0 +1,40 @@
+@mixin main-wrap {
+    width: 90%;
+    max-width: $maxWidth;
+    margin: 0 auto;
+}
+
+@mixin main-padding {
+    padding-right: 5%;
+    padding-left: 5%;
+
+    @include breakpoint($maxWidth/9*10) {
+        padding-right: calc((100vw - #{$maxWidth}) / 2);
+        padding-left: calc((100vw - #{$maxWidth}) / 2);
+    }
+}
+
+@mixin hover {
+    @media not all and (pointer:coarse) {
+        &:hover, &:active, &:focus, &:focus:active {
+            @content;
+        }
+    }
+}
+
+@mixin hoverWithin {
+    @media not all and (pointer:coarse) {
+        &:focus-within {
+            @content;
+        }
+
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin aa {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

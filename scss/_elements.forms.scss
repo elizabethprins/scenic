@@ -1,0 +1,135 @@
+textarea,
+select,
+input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    width: 100%;
+    padding: 0.75em;
+    border: 0;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: inherit;
+    transition: all .2s;
+
+    &::placeholder {
+        color: rgba($grey, .75);
+        transition: color .2s;
+    }
+
+    &:active, &:focus {
+        &::placeholder {
+            color: $greyDark;
+        }
+    }
+
+    @include hover {
+        outline-color: $blueBlack;
+    }
+}
+
+input[type="number"] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+.select {
+    position: relative;
+
+    select {
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        padding-right: 1.5em;
+        background: $white;
+    }
+
+    svg {
+        position: absolute;
+        top: 50%;
+        right: .25em;
+        transform: translateY(-50%);
+    }
+}
+
+.add-bandmate {
+    padding: .25em 1.25rem 0 0;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba($white, .9);
+
+    .add-bandmate__name {
+        width: 7em;
+        margin-left: 0;
+
+        + span {
+            margin-left: auto;
+        }
+    }
+
+    input[type="number"] {
+        &::placeholder {
+            color: $greyDark;
+        }
+
+        &:active, &:focus {
+            &::placeholder {
+                color: rgba($grey, .9);
+            }
+        }
+    }
+}
+
+.fake-form {
+    width: 80%;
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column;
+
+    input, a {
+        width: 100%;
+        height: 2.75em;
+        border-radius: 5px;
+    }
+
+    input {
+        margin-bottom: .675em;
+        border: 1px solid rgba($blueBlack, .9);
+        font-style: italic;
+        color: $blueBlack;
+        background: $white;
+    }
+}
+
+.form {
+    div {
+        display: flex;
+        align-items: center;
+
+        + div {
+            margin-top: .5em;
+        }
+
+        label {
+            width: 42%;
+            margin-right: 1em;
+            flex-shrink: 0;
+        }
+
+        input {
+            border-radius: 5px;
+
+            &::placeholder {
+                font-style: italic;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 1.5em;
+    }
+}
